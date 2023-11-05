@@ -12,7 +12,7 @@ export const authConfig = {
       if (isOnDashboard) {
         if (isLoggedIn) return true;
         return false;
-      } else if (isLoggedIn) {
+      } else if (isLoggedIn && !nextUrl.pathname.endsWith('png')) {
         return Response.redirect(new URL('/dashboard', nextUrl));
       }
       return true;
